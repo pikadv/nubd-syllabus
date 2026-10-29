@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d35">
+  <meta name="description" content="Browse National University Bangladesh syllabus courses, codes, credits, and sources.">
+  <title>NUBD Syllabus - National University Bangladesh</title>
+  <link rel="stylesheet" href="./styles.css?v=1">
+  <script src="./app.js?v=1" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="NUBD Syllabus home">
+        <span class="brand-mark" aria-hidden="true">NU</span>
+        <span><strong>NUBD</strong><small>SYLLABUS LIBRARY</small></span>
+      </a>
+      <a class="header-link" href="#catalogue">Browse catalogue</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">NATIONAL UNIVERSITY BANGLADESH</p>
+        <h1>NUBD Syllabus</h1>
+        <p class="hero-description">Browse collected course lists, codes, and credits by programme, department, year, and syllabus version.</p>
+        <a class="hero-action" href="#catalogue">Explore the catalogue <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="book book-back"></div><div class="book book-front"><span>NU</span><i></i><i></i><i></i></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <span class="spark spark-one">✦</span><span class="spark spark-two">✦</span>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Catalogue summary">
+      <article class="stat-card"><span class="stat-icon" aria-hidden="true">▤</span><div><strong id="stat-courses">-</strong><span>course entries</span></div></article>
+      <article class="stat-card"><span class="stat-icon" aria-hidden="true">▦</span><div><strong id="stat-lists">-</strong><span>syllabus lists</span></div></article>
+      <article class="stat-card"><span class="stat-icon" aria-hidden="true">⌂</span><div><strong id="stat-departments">-</strong><span>departments</span></div></article>
+      <article class="stat-card"><span class="stat-icon" aria-hidden="true">◎</span><div><strong id="stat-programmes">-</strong><span>degree types</span></div></article>
+    </section>
+
+    <section id="catalogue" class="catalogue-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow-dark">THE COLLECTION</p>
+          <h2>Browse the syllabus catalogue</h2>
+          <p class="section-description">Search course codes or names, or narrow the lists with the filters.</p>
+        </div>
+        <a class="download-link" href="./syllabus.json" download>Download full JSON <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="filter-card">
+        <div class="search-wrap">
+          <label for="search">Search courses</label>
+          <div class="search-control"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Try a course title or code" autocomplete="off"><button id="clear-search" type="button" aria-label="Clear search" hidden>×</button></div>
+        </div>
+        <div class="filter-grid">
+          <div><label for="programme">Degree type</label><select id="programme"><option value="">All degree types</option></select></div>
+          <div><label for="department">Department</label><select id="department"><option value="">All departments</option></select></div>
+          <div><label for="academic-year">Academic year</label><select id="academic-year"><option value="">All years</option></select></div>
+          <div><label for="syllabus-version">Syllabus version</label><select id="syllabus-version"><option value="">All versions</option></select></div>
+        </div>
+        <div class="filter-footer">
+          <p id="filter-hint">Filters update the catalogue automatically.</p>
+          <button id="reset-filters" type="button" class="text-button">Clear filters</button>
+        </div>
+      </div>
+
+      <div class="results-heading">
+        <div><h3>Collected courses</h3><p id="results-summary" aria-live="polite">Loading catalogue...</p></div>
+        <div id="page-status" class="page-status"></div>
+      </div>
+      <div id="catalogue-results" class="catalogue-results" aria-live="polite"></div>
+      <nav id="pagination" class="pagination" aria-label="Catalogue pages" hidden>
+        <button id="previous-page" type="button" class="page-button">← Previous</button>
+        <span id="page-label"></span>
+        <button id="next-page" type="button" class="page-button">Next →</button>
+      </nav>
+      <div id="load-error" class="load-error" role="alert" hidden>
+        <strong>The catalogue could not be loaded.</strong>
+        <span>Try refreshing the page, or <a href="./syllabus.json">open the full JSON file</a>.</span>
+      </div>
+    </section>
+
+    <section class="notice">
+      <span class="notice-mark" aria-hidden="true">i</span>
+      <p><strong>About these records</strong><br>Lists and credits are presented as collected in the JSON catalogue. Some entries were transcribed from reference pages and have not been independently verified against an official National University PDF. Check the linked source and official syllabus before relying on a list.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://github.com/pikadv/nubd-syllabus">NUBD Syllabus on GitHub</a>
+    <span>National University Bangladesh syllabus collection</span>
+  </footer>
+</body>
+</html>
